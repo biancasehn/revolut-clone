@@ -14,10 +14,12 @@
     --primaryFont: 'Basier Circle';
     
     --lightText: rgb(255, 255, 255);
-    --darkDetail: #191c1f;
+    --darkDetail: rgb(25, 28, 31);
     --blue: rgb(6, 102, 235);
     --gray: rgb(117, 128, 138);
-    --header: rgba(241, 242, 244, 0.8);
+    --header: rgb(241, 242, 244);
+    --blurry-header: rgba(241, 242, 244, 0.8);
+
 }
 
 body {
@@ -34,6 +36,10 @@ body {
     background-color: rgb(243, 244, 245);
     font-family: var(--secondaryFont);
     font-size: 16px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .main-container {
@@ -117,6 +123,7 @@ body {
 nav {
     position: sticky;
     top: 0em;
+    background-color: var(--blurry-header);
     border-bottom: 1px solid rgb(223, 227, 231);
     z-index: 2;
 }
@@ -221,5 +228,147 @@ nav {
 
 .section-cta {
     margin-top: 2.5rem;
+
+}
+
+.cards {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.cards a:last-child {
+    margin-bottom: 3rem;
+}
+
+.dark-card {
+    color:var(--lightText);
+}
+
+.light-card {
+    color:var(--darkDetail);
+}
+
+.light-card .card-cta {
+    color: var(--blue);
+}
+
+.card-content {
+    min-height: 60vh;
+
+    border-radius: 20px;
+
+    font-weight: 500;
+
+    padding: 2rem;
+    text-align: left;
+
+    transition: transform 0.6s ease 0s;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.card-content h3 {
+    margin: 0;
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 24px;
+    white-space: pre-wrap;
+    line-height: 28px;
+}
+
+.card-content p {
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+.card-cta {
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: -1rem;
+    padding: 0.25rem 0.5rem 0.25rem 1rem;
+
+    transition: all 0.3s ease 0s;
+
+    margin-top: 1rem;
+    margin-right: auto;
+}
+
+footer {
+    margin-top: 60px;
+    background-color: var(--darkDetail);
+}
+
+.footer-container {
+    padding: 2.5rem 0;
+}
+
+.plans {
+    color: var(--gray);
+}
+
+.plans h2 {
+    font-family: var(--primaryFont);
+
+}
+
+#card-1 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Payments_Mobile.jpg);
+    background-position: right bottom;
+}
+
+
+@media screen and (min-width: 720px){
+    #card-1 {
+        background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Payments.jpg);
+    }
+}
+
+
+#card-2 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Budgeting_Mobile.jpg);
+    background-position: center;
+}
+
+#card-3 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_rewards_small_mobile.jpg);
+    background-position: right bottom;
+}
+
+#card-4 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Cards_Mobile.jpg);
+    background-position: right bottom;
+}
+
+#card-5 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Transfers_Mobile.jpg);
+    background-position: right bottom;
+}
+
+#card-6 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Currencies_Mobile.jpg);
+    background-position: right bottom;
+}
+#card-7 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_crypto_mobile_big.jpg);
+    background-position: right bottom;
+}
+
+#card-8 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_Vaults_Mobile_USD.jpg);
+    background-position: right bottom;
+}
+
+#card-9 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Shopper_Mobile.jpg);
+    background-position: center center;
+}
+
+#card-10 {
+    background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/CardSecurity_Mobile.jpg);
+    background-position: center center;
 
 }
