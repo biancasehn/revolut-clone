@@ -122,7 +122,7 @@ a {
 
 nav {
     position: sticky;
-    top: 0em;
+    top: 0.01rem;
     background-color: var(--blurry-header);
     border-bottom: 1px solid rgb(223, 227, 231);
     z-index: 2;
@@ -198,7 +198,7 @@ nav {
     padding-right: 1.25rem;
 }
 
-.section-title {
+.section-title, .footer-card span {
     margin: 0;
 
     font-family: var(--primaryFont);
@@ -215,7 +215,6 @@ nav {
     font-weight: 600;
     font-size: 34px;
     line-height: 40px;
-
 }
 
 .section-description {
@@ -228,7 +227,6 @@ nav {
 
 .section-cta {
     margin-top: 2.5rem;
-
 }
 
 .cards {
@@ -263,10 +261,9 @@ nav {
     text-align: left;
 
     transition: transform 0.6s ease 0s;
-
+    background-color: var(--lightText);
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
 
 .card-content h3 {
@@ -298,21 +295,59 @@ nav {
 }
 
 footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
     margin-top: 60px;
     background-color: var(--darkDetail);
+    color: var(--lightText)
 }
 
 .footer-container {
     padding: 2.5rem 0;
 }
 
-.plans {
+.footer-plans h2 {
+    font-family: var(--primaryFont);
     color: var(--gray);
 }
 
-.plans h2 {
-    font-family: var(--primaryFont);
+.footer-cards {
+    list-style: none;
+    padding: 0;
+}
 
+.footer-card {
+    min-height: 100%;
+    margin-bottom: 1.25rem;
+    padding: 1.5rem 1rem;
+    grid-template-rows: repeat(3, auto) 1fr;
+    height: 100%;
+}
+
+.footer-card-svg {
+    display: flex;
+    justify-content: flex-end;
+
+    color: var(--gray);
+
+}
+
+.footer-card span {
+    color: var(--darkDetail);
+}
+
+.footer-card-description {
+    margin: 0;
+    color: var(--gray);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.footer-cta {
+    background-color: var(--lightText);
+    color: var(--darkDetail);
 }
 
 #card-1 {
