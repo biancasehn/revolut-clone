@@ -10,7 +10,7 @@
 
 :root {
     --secondaryFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --primaryFont: 'Basier Circle';
+    --primaryFont: 'Basier Circle', sans-serif;
     
     --lightText: rgb(255, 255, 255);
     --darkDetail: rgb(25, 28, 31);
@@ -57,6 +57,10 @@ a {
     align-items: center;
     justify-content: space-between;
 }
+.container-location-header {
+    background-color: rgb(223, 227, 231);
+}
+
 
 .container-nav {
     position:sticky;
@@ -69,7 +73,7 @@ a {
     font-size: 12px;
     line-height: 16px;
     
-    padding: 1.25rem;
+    padding: .5rem .9rem;
 
     max-width: 1000px;
     width: 100%;
@@ -88,39 +92,67 @@ a {
 }
 
 .location-header-txt {
+    color: var(--gray);
     padding: 0 1.25rem;
 }
 
 .country-selector-box {
+    display: flex;
+    align-items: center;
     padding: 0 1.25rem;
 }
 
 .country-selector {
-    display: inline-block;
+    position: relative;
 
+    display: inline-block;
     color: var(--darkDetail);
     background-color: var(--lightText);
 
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
     letter-spacing: -0.00625em;
 
     width: max-content;
-    padding: .4em 1em;
+    padding: 0.5rem 1rem;
     margin-right: 1em;
 
     border: none;
     border-radius: 10px;
 
     cursor:pointer;
+
+    display: grid;
+    grid-template-columns: 24px 1fr 12px;
+    gap: 1rem;
+    align-items: center;
+}
+
+.country-flag {
+    border-radius: 9999px;
+    width: 24px;
+    height: 24px;
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://assets.revolut.com/assets/flags/US.svg);
 }
 
 .chevron-down {
     margin-left: .8em;
 }
 
-.primarycta {
+.close-container-location-header {
+    color: var(--gray);
+    cursor: pointer;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.primary-cta {
     color: var(--lightText);
     background-color: var(--darkDetail);
     font-size: 16px;
@@ -140,17 +172,23 @@ a {
     text-decoration: none;
 }
 
+.light-primary-cta {
+    background-color: var(--lightText);
+    color: var(--darkDetail);
+}
+
 nav {
     max-width: 1000px;
     width: 100%;
 }
 
-.sticky-nav {
+.layout-nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     backdrop-filter: blur(16px);
-    padding: .6rem 1.25rem .6rem 0.3rem;
+    padding: .5rem 1.25rem .5rem 0.3rem;
 
     margin-right: 1.2em;
 }
@@ -160,17 +198,132 @@ nav {
     margin: 0;
 }
 
-#icon-burger-menu {
-    text-align: center;
+.menu {
+    width: 100%
+}
+
+#menu-mobile {
+    text-align: right;
     align-items: center;
 
-    background-color: var(--lightText);
     color: var(--darkDetail);
     cursor: pointer;
 
-    border-radius: 10px;
-    padding: .6em .6em .3em .6em;
+    padding: .5em auto .5em 1.25em;
+
     margin: 0;
+}
+
+#menu-mobile svg {
+    width: 20px;
+    background-color: var(--lightText);
+    padding: .5rem;
+    border-radius: 10px;
+}
+
+#menu-desktop {
+    display: none;
+    margin: 0;
+}
+
+#menu-desktop ul {
+    list-style-type: none;
+}
+
+@media screen and (min-width: 1024px) {
+    #menu-mobile {
+        display: none;
+    }
+
+    #menu-desktop {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: .5em .6em .5em 1.25em;
+    }
+
+    #menu-desktop ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        align-items: center;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: var(--primaryFont);
+        color: var(--darkDetail);
+        font-size: 16px;
+    }
+
+    #menu-desktop ul li {
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+        background-color: transparent;
+        border-radius: 10px;
+
+        transition: all 0.15s ease 0s;
+    }
+
+    #menu-desktop ul li:hover {
+        background: var(--lightText);
+    }
+
+    body .hero-desktop {
+        position: relative;
+        width: 100%;
+    }
+
+    body #hero-img-desktop {
+        position: absolute;
+        top: 0;
+        left: -20px;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+
+    .main-container #hero-img-mobile {
+        position: absolute;
+        display: none;
+        z-index: -1;
+    }
+
+    main .hero {
+        height: 80vh;
+        max-height: 800px;
+        min-height: 600px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main .hero-container {
+        gap: 1.5rem;
+  
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    main .hero-container h1 {
+        font-family: var(--primaryFont);
+        font-size: 96px;
+        font-weight: 600;
+        line-height: 104px;
+    
+        margin: 0;
+    }
+    
+    .hero-container p {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        margin: 0;
+    }
 }
 
 .main-container {
@@ -185,11 +338,17 @@ nav {
     padding-right: 1.25rem;
 }
 
-.hero-img {
+#hero-img-mobile {
+    display: block;
     width: 100%;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+}
+
+#hero-img-desktop {
+    position: absolute;
+    display: none;
 }
 
 .hero-container {
@@ -266,6 +425,22 @@ nav {
 .cards {
     display: grid;
     gap: 1.25rem;
+}
+
+@media screen and (min-width: 719px) {
+    .cards-1, .cards-4 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    #card-grid-1 {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    #card-grid-4 {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
 }
 
 .cards a:last-child {
@@ -357,6 +532,19 @@ footer {
     padding: 0;
 }
 
+@media screen and (min-width: 719px) {
+    .footer-cards {
+        max-width: 1000px;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 2rem;
+    }
+
+    .light-card {
+        height: 70%;
+    }
+}
+
 .footer-card {
     min-height: 100%;
     margin-bottom: 1.25rem;
@@ -382,11 +570,6 @@ footer {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-}
-
-.footer-cta {
-    background-color: var(--lightText);
-    color: var(--darkDetail);
 }
 
 #card-1 {
@@ -418,23 +601,59 @@ footer {
     background-position: right bottom;
 }
 
+@media screen and (min-width: 719px) {
+    #card-4 {
+        background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Cards.jpg);     
+    }
+}
+
 #card-5 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Transfers_Mobile.jpg);
     background-position: right bottom;
 }
 
+@media screen and (min-width: 719px) {
+    #card-5 {
+        background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Transfers.jpg);
+        
+    }
+}
+
 #card-6 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Currencies_Mobile.jpg);
     background-position: right bottom;
+    background-size: contain;
 }
+
+@media screen and (min-width: 719px) {
+    #card-6 {
+        background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Currencies.jpg);     
+        background-position: left bottom;
+    }
+}
+
 #card-7 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_crypto_mobile_big.jpg);
     background-position: center center;
 }
 
+@media screen and (min-width: 719px) {
+    #card-7 {
+        background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_crypto_desktop_big.jpg);     
+        background-position: right bottom;
+    }
+}
+
 #card-8 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_Vaults_Mobile_USD.jpg);
     background-position: center center;
+}
+
+@media screen and (min-width: 719px) {
+    #card-8 {
+        background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/US/Home_vaults_desktop.jpg);     
+        background-position: right bottom;
+    }
 }
 
 #card-9 {
@@ -445,5 +664,4 @@ footer {
 #card-10 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/CardSecurity_Mobile.jpg);
     background-position: center center;
-
 }
