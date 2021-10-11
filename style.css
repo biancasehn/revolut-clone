@@ -367,7 +367,6 @@ nav {
         content: "";
         padding-bottom: 100%;
     }
-
 }
 
 .card-content:hover {
@@ -507,7 +506,7 @@ footer {
 
 #card-2 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Budgeting_Mobile.jpg);
-    background-position: center center;
+    background-position: bottom center;
 }
 
 #card-3 {
@@ -619,11 +618,11 @@ footer {
     }
 
     #card-1, #card-4, #card-5, #card-6, #card-7, #card-8 {
-        aspect-ratio: 1.9084;
+        aspect-ratio: 2.1;
     }
 
     #card-2, #card-3, #card-9, #card-10 {
-        aspect-ratio: 0.8;
+        aspect-ratio: .85;
     }
 
     #card-1 {
