@@ -61,7 +61,6 @@ a {
     background-color: rgb(223, 227, 231);
 }
 
-
 .container-nav {
     position:sticky;
     position: -webkit-sticky;
@@ -363,7 +362,7 @@ nav {
     transition: background-size .6s ease 0s;
 }
 
-@supports not (aspect-ratio: 0.659449) {
+/* @supports not (aspect-ratio: 0.659449) {
     .card-content::before {
         content: "";
         padding-bottom: 90%;
@@ -374,7 +373,7 @@ nav {
         content: "";
         clear: both;
     }
-}
+} */
 
 .card-content:hover {
     background-size: 112%;
@@ -592,7 +591,6 @@ footer {
         background-size: 110%;
     }
     
-
     .wider-card {
         position: relative;
         display: flex;
