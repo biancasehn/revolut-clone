@@ -65,7 +65,9 @@ a {
 .container-nav {
     position:sticky;
     position: -webkit-sticky;
+    z-index: 2;
     top: 0.01rem;
+
     background-color: var(--blurry-header);
 }
 
@@ -154,8 +156,6 @@ a {
     line-height: 24px;
     letter-spacing: -0.00625em;
     text-align: center;
-
-    transition: background-color 300ms cubic-bezier(0.15, 0.5, 0.5, 1) 0s, color 300ms cubic-bezier(0.15, 0.5, 0.5, 1) 0s, opacity 300ms cubic-bezier(0.15, 0.5, 0.5, 1) 0s, box-shadow 200ms cubic-bezier(0.4, 0.3, 0.8, 0.6) 0s;
 
     max-width: fit-content;
     padding: .4em 1em;
@@ -353,13 +353,19 @@ nav {
     padding: 2rem;
     text-align: left;
 
-    transition: transform 0.6s ease 0s;
     background-color: var(--lightText);
     background-size: cover;
     background-repeat: no-repeat;
 
     display: flex;
     flex-direction: column;
+
+    transition: background-size .6s ease 0s;
+
+}
+
+.card-content:hover {
+    background-size: 112%;
 }
 
 .card-content h3 {
@@ -384,10 +390,22 @@ nav {
     margin-left: -1rem;
     padding: 0.25rem 0.5rem 0.25rem 1rem;
 
-    transition: all 0.3s ease 0s;
+    background-color: transparent;
+    border-radius: 20px;
+    text-align: center;
+
+    width: fit-content;
+
+    transition: all 0.15s ease 0s;
+
 
     margin-top: 1rem;
     margin-right: auto;
+}
+
+.card-content:hover .card-cta {
+    background-color: rgb(6, 102, 235);
+    color: var(--lightText);
 }
 
 .footer-container {
@@ -434,8 +452,6 @@ footer {
     display: grid;
     grid-template-rows: repeat(3, auto) 1fr;
     gap: -25rem;
-    
-    transition: transform 0.6s ease 0s;
 }
 
 .footer-card h3 {
@@ -448,14 +464,6 @@ footer {
     line-height: 28px;
 }
 
-.footer-card-svg {
-    position: absolute;
-    bottom: 1rem;
-    right: 1.5rem;
-
-    color: var(--gray);
-}
-
 .footer-card span {
     color: var(--darkDetail);
 }
@@ -466,6 +474,23 @@ footer {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
+}
+
+.footer-card-svg {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+
+    background-color: transparent;
+    border-radius: 9999px;
+    padding: .3rem .3rem .1rem;
+
+    color: var(--gray);
+}
+
+.footer-card:hover .footer-card-svg {
+    background:rgb(6, 102, 235);
+    color: var(--lightText);
 }
 
 
@@ -497,7 +522,6 @@ footer {
 #card-6 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Currencies_Mobile.jpg);
     background-position: right bottom;
-    background-size: contain;
 }
 
 #card-7 {
@@ -546,7 +570,16 @@ footer {
 
     .card-content {
         position: relative;
+
+        background-size: 107%;
+
+        transition: background-size 0.5s ease 0s;
     }
+    
+    .card-content:hover {
+        background-size: 110%;
+    }
+    
 
     .wider-card {
         position: relative;
@@ -751,26 +784,12 @@ footer {
     }
 
     .card-content p, 
-    .card-content span{
+    .card-content .card-cta{
         font-size: 20px;
         line-height: 28px;
 
         font-weight: 500;
         margin-top: 1rem;
-    }
-
-    .card-cta {
-        position: relative;
-    }
-
-    .card-cta svg {
-        position: absolute;
-        
-        width: 1.5rem;
-        height: 1.5rem;
-
-        bottom: .3rem;
-        right: -2rem;
     }
 
     .cards a:last-child {
