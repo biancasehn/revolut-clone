@@ -361,7 +361,19 @@ nav {
     flex-direction: column;
 
     transition: background-size .6s ease 0s;
+}
 
+@supports not (aspect-ratio: 0.659449) {
+    .card-content::before {
+        content: "";
+        padding-bottom: 90%;
+    }
+
+    .card-content::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
 }
 
 .card-content:hover {
@@ -516,7 +528,7 @@ footer {
 
 #card-5 {
     background-image: url(https://cdn.revolut.com/website/assets/retail/home-V3/Transfers_Mobile.jpg);
-    background-position: right bottom;
+    background-position: center center;
 }
 
 #card-6 {
