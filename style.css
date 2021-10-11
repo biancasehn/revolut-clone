@@ -429,7 +429,7 @@ footer {
     height: 100%;
     min-height: 100%;
     margin-bottom: 1.25rem;
-    padding: 3rem 1rem;
+    padding: 3rem 1.25rem;
 
     display: grid;
     grid-template-rows: repeat(3, auto) 1fr;
@@ -547,6 +547,7 @@ footer {
     .card-content {
         position: relative;
     }
+
     .wider-card {
         position: relative;
         display: flex;
@@ -555,24 +556,28 @@ footer {
     }
 
     .content-left h3,
-    .content-left p,
-    .content-left .card-cta {
+    .content-left p {
         max-width: 47%;
     }
     
     .content-right h3,
-    .content-right p,
-    .content-right .card-cta {
+    .content-right p {
         margin-right: 0;
         margin-left: auto;
         
         max-width: 47%;
     }
 
-    .card-cta {
+    .card-content .card-cta {
         position: absolute;
         bottom: 2rem;
         left: 2rem;
+    }
+
+    .content-right .card-cta {
+        position: absolute;
+        bottom: 2rem;
+        left: 53%;
     }
 
     #card-1, #card-4, #card-5, #card-6, #card-7, #card-8 {
@@ -745,12 +750,27 @@ footer {
         line-height: 40px;
     }
 
-    .card-content p, span{
+    .card-content p, 
+    .card-content span{
         font-size: 20px;
         line-height: 28px;
 
         font-weight: 500;
         margin-top: 1rem;
+    }
+
+    .card-cta {
+        position: relative;
+    }
+
+    .card-cta svg {
+        position: absolute;
+        
+        width: 1.5rem;
+        height: 1.5rem;
+
+        bottom: .3rem;
+        right: -2rem;
     }
 
     .cards a:last-child {
