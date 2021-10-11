@@ -362,18 +362,13 @@ nav {
     transition: background-size .6s ease 0s;
 }
 
-/* @supports not (aspect-ratio: 0.659449) {
-    .card-content::before {
+@supports not (aspect-ratio: 0.659449) {
+    .card-content::after {
         content: "";
-        padding-bottom: 90%;
+        padding-bottom: 100%;
     }
 
-    .card-content::after {
-        display: block;
-        content: "";
-        clear: both;
-    }
-} */
+}
 
 .card-content:hover {
     background-size: 112%;
